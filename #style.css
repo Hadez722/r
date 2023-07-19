@@ -1,0 +1,68 @@
+#texto1 { font-size: 90px;}
+
+body{
+    background: #e5fdfb;
+    text-align: center;
+    margin: 0;
+  }
+.modal{
+    width: 100%;
+    height: 100vh;
+    background: rgb(0,0,0,0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    animation: modal 3s 5s forwards;
+    visibility: hidden;
+    opacity: 0;
+
+}
+.ventana {
+    margin: auto;
+    width: 60%;
+    height: 60%;
+    background: rgb(227,198, 240);
+    border-radius: 10px;
+
+}
+
+
+
+#cerrar{
+
+    display: none;
+}
+#cerrar + label {
+    position: fixed;
+    color: #000000;
+    font-size: 25px;
+    z-index: 50;
+    background: rgb(252, 252, 252);
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    right: 10px;
+    cursor: pointer;
+    animation: modal 3s 5s forwards;
+    
+    visibility: hidden;
+    opacity: 0;
+}
+#cerrar:checked + label ~ .modal   {
+    display: none;
+
+}
+#cerrar :checked+label ~  #cerrar{
+    display: none;
+
+}
+
+@keyframes modal{
+    100%{
+        visibility: visible;    
+        opacity:1;
+    }
+    
+}
